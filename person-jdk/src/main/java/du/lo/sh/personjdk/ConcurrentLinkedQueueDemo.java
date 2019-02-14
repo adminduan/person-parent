@@ -15,28 +15,28 @@ public class ConcurrentLinkedQueueDemo {
 
     private static ConcurrentLinkedQueue<String> concurrentLinkedQueue = new ConcurrentLinkedQueue<>();
 
-    public static void main(String[] args) {
-        System.out.print("\r" + "aa" + "\n");
-//        ConcurrentLinkedQueueDemo concurrentLinkedQueueDemo = new ConcurrentLinkedQueueDemo();
+//    public static void main(String[] args) {
+//        System.out.print("\r" + "aa" + "\n");
+////        ConcurrentLinkedQueueDemo concurrentLinkedQueueDemo = new ConcurrentLinkedQueueDemo();
+////
+////        ConcurrentLinkedQueueDemo t =  new ConcurrentLinkedQueueDemo();
+////        System.out.println(t);
+////        ConcurrentLinkedQueueDemo tail = new ConcurrentLinkedQueueDemo();
+////        System.out.println(tail);
+////        System.out.println(t != (t = tail) ? t : "");
 //
-//        ConcurrentLinkedQueueDemo t =  new ConcurrentLinkedQueueDemo();
-//        System.out.println(t);
-//        ConcurrentLinkedQueueDemo tail = new ConcurrentLinkedQueueDemo();
-//        System.out.println(tail);
-//        System.out.println(t != (t = tail) ? t : "");
-
-        boolean addResult = concurrentLinkedQueue.offer("a");
-//        concurrentLinkedQueue.poll();
-        System.out.println("addResult: " + addResult);
-        boolean offerResult = concurrentLinkedQueue.offer("b");
-        offerResult = concurrentLinkedQueue.offer("a");
-        System.out.println("offerResult: " + offerResult);
-
-
-        System.out.println(concurrentLinkedQueue.size());
-        String result = concurrentLinkedQueue.peek();
-        System.out.println(result);
-    }
+//        boolean addResult = concurrentLinkedQueue.offer("a");
+////        concurrentLinkedQueue.poll();
+//        System.out.println("addResult: " + addResult);
+//        boolean offerResult = concurrentLinkedQueue.offer("b");
+//        offerResult = concurrentLinkedQueue.offer("a");
+//        System.out.println("offerResult: " + offerResult);
+//
+//
+//        System.out.println(concurrentLinkedQueue.size());
+//        String result = concurrentLinkedQueue.peek();
+//        System.out.println(result);
+//    }
 
 
 //    private static AtomicInteger guidSequence = new AtomicInteger(0);

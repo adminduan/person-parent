@@ -37,21 +37,21 @@ public class XmlUtils {
     }
 
 
-    public static void main(String[] args) throws DocumentException {
-
-        SAXReader saxReader = new SAXReader();
-        Document document = saxReader.read(new File(ClassLoader.getSystemResource("book.xml").getFile()));
-        Element rootElement = document.getRootElement();
-        System.out.println("<<" + rootElement.getName());
-        List<Element> elements = rootElement.elements();
-        for (Element element : elements){
-            System.out.println(element.getName());
-            List<Element> els = element.elements("title");
-            for (Element element1 : els){
-                System.out.println(">> " + element1.getName());
-            }
-        }
-
-    }
+//    public static void main(String[] args) throws DocumentException {
+//
+//        SAXReader saxReader = new SAXReader();
+//        Document document = saxReader.read(new File(ClassLoader.getSystemResource("book.xml").getFile()));
+//        Element rootElement = document.getRootElement();
+//        System.out.println("<<" + rootElement.getName());
+//        List<Element> elements = rootElement.elements();
+//        for (Element element : elements){
+//            System.out.println(element.getName());
+//            List<Element> els = element.elements("title");
+//            for (Element element1 : els){
+//                System.out.println(">> " + element1.getName());
+//            }
+//        }
+//
+//    }
 
 }
