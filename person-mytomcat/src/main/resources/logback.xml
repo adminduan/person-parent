@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--开始日志debug模式 也可以定义动态监测配置文件 使用scan-->
+<configuration debug="true" >
+
+    <!--生成文件 文件最大500M 一般超过500M 最多30个文件，超过30个文件会自动删除，总共大小为30GB，超过30GB则删除历史文件-->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <append>true</append>
+        <file>logFile.log</file>
+        <immediateFlush>true</immediateFlush>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>logFile.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxFileSize>500mb</maxFileSize>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>30GB</totalSizeCap>
+        </rollingPolicy>
+
+        <encoder>
+            <!--显示的是 日期 线程名 日志级别 日志信息 写的日志内容 换行-->
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %level %logger - %msg%n</pattern>
+        </encoder>
+
+    </appender>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+
+    <!--日志级别为 info 以及以上的级别-->
+    <root level="info">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILE"/>
+    </root>
+
+</configuration>
