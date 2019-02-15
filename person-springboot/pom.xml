@@ -10,9 +10,9 @@
 	</parent>
 
 	<groupId>du.lo.sh</groupId>
-	<artifactId>person-springbook</artifactId>
+	<artifactId>person-springboot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>person-springbook</name>
+	<name>person-springboot</name>
 	<description>Demo project for Spring Boot</description>
 
 
