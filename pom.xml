@@ -73,9 +73,10 @@
     </build>
 
     <modules>
+        <module>person-exercise</module>
         <module>person-mytomcat</module>
         <module>person-jdk</module>
-        <module>person-springbook</module>
+        <module>person-springboot</module>
     </modules>
 
 </project>
