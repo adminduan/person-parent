@@ -50,7 +50,9 @@ public class RedisPipeline {
             } else {
 
             }
+
             System.out.println("task [ " + threadNum + " ] end");
+            latch.countDown();
         }
     }
 
@@ -64,9 +66,10 @@ public class RedisPipeline {
         for (int i = 0; i< taskCount; i++){
             executorService.submit(new TaskRunnable(i, countDownLatch));
         }
-
         countDownLatch.await();
+        System.out.println("==========" + countDownLatch.getCount());
         long endTime = System.currentTimeMillis();
         System.out.println("总耗时：" + (endTime - beginTime));
+        executorService.shutdownNow();
     }
 }
