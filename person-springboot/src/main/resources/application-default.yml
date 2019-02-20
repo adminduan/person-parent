@@ -1,0 +1,17 @@
+# debug: true
+name: default-person-springboot
+my.secret: ${random.value}
+my.number: ${random.int}
+my.bignumber: ${random.long}
+my.uuid: ${random.uuid}
+my.number.less.then.ten: ${random.int(10)}
+my.number.in.range: ${random.int[1024,1040]}
+
+
+environments:
+  dev:
+    url: http://dev.example.com
+    name: Developer setup
+  prod:
+    url: http://prod.example.com
+    name: My CollMap

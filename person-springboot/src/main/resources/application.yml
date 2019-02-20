@@ -1,5 +1,11 @@
-debug: true
+# debug: true
+name: myperson-springboot
+
 spring:
   devtools:
     remote:
       secret: mysecret
+
+  application:
+    admin:
+      enabled: true
