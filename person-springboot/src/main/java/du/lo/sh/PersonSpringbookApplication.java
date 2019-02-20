@@ -1,6 +1,7 @@
 package du.lo.sh;
 
 import du.lo.sh.importcls.ImportClass;
+import du.lo.sh.listeners.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -31,8 +32,11 @@ public class PersonSpringbookApplication {
 //		springApplication.run(args);
 
 		//方法三
+//		SpringApplicationBuilder applicationBuilder = new SpringApplicationBuilder();
+//		applicationBuilder.lazyInitialization(true).sources(PersonSpringbookApplication.class).run(args);
+
 		SpringApplicationBuilder applicationBuilder = new SpringApplicationBuilder();
-		applicationBuilder.lazyInitialization(true).sources(PersonSpringbookApplication.class).run(args);
+		applicationBuilder.listeners(new ApplicationFailedListener(), new ApplicationReadyListener(), new ApplicationStartedListener(), new ApplicationStartingEventListener(),new ApplicationRefreshListener(), new MyListener()).sources(PersonSpringbookApplication.class).run(args);
 	}
 
 }
