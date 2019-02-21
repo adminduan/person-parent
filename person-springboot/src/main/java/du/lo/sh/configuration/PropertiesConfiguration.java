@@ -1,9 +1,13 @@
 package du.lo.sh.configuration;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -14,6 +18,7 @@ import java.util.Map;
  * @Version 1.0
  */
 @Component
+@ConfigurationProperties(prefix = "environments")
 public class PropertiesConfiguration {
 
     @Value("${name}")
@@ -34,11 +39,20 @@ public class PropertiesConfiguration {
     @Value("${my.number.less.then.ten}")
     private String lessThanTen;
 
-    @Value("${environments.dev.url}")
+    @Value("${my.number.in.range}")
     private String inRange;
 
-    @Value("${environments.dev}")
-    private Map<String, String> ymlToParam;
+
+    private Map<String, String> prod ;//= new HashMap<>();
+    private List<String> servers = new ArrayList<>();
+
+    public void setProd(HashMap<String, String> prod) {
+        this.prod = prod;
+    }
+
+    public void setServers(List<String> servers) {
+        this.servers = servers;
+    }
 
     @PostConstruct
     public void init(){
@@ -50,6 +64,7 @@ public class PropertiesConfiguration {
         System.out.println(">>>>>>" + uuid);
         System.out.println(">>>>>>" + lessThanTen);
         System.out.println(">>>>>>" + inRange);
-        System.out.println(">>>>>>" + ymlToParam);
+        System.out.println(">>>>>>" + prod);
+        System.out.println(">>>>>>" + servers);
     }
 }

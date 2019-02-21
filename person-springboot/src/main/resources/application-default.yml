@@ -7,7 +7,6 @@ my.uuid: ${random.uuid}
 my.number.less.then.ten: ${random.int(10)}
 my.number.in.range: ${random.int[1024,1040]}
 
-
 environments:
   dev:
     url: http://dev.example.com
@@ -15,3 +14,8 @@ environments:
   prod:
     url: http://prod.example.com
     name: My CollMap
+  servers:
+    - http://www.baidu.com
+    - http://www.google.com
+
+
