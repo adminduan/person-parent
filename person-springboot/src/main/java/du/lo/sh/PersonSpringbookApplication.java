@@ -30,7 +30,9 @@ public class PersonSpringbookApplication {
 
 	public static void main(String[] args) {
 
-		SpringApplication.run(PersonSpringbookApplication.class, args);
+		SpringApplication springApplication = new SpringApplication(PersonSpringbookApplication.class);
+		springApplication.run(args);
+
 
 		//方法一
 //		SpringApplication.run(PersonSpringbookApplication.class, args);

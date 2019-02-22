@@ -1,10 +1,13 @@
 package du.lo.sh.configuration;
 
+import du.lo.sh.bean.MyBean;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
+import org.springframework.validation.annotation.Validated;
 
 import javax.annotation.PostConstruct;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -17,8 +20,10 @@ import java.util.Map;
  * @Date 2019/2/20 16:16
  * @Version 1.0
  */
+
 @Component
 @ConfigurationProperties(prefix = "environments")
+@Validated
 public class PropertiesConfiguration {
 
     @Value("${name}")
@@ -46,12 +51,19 @@ public class PropertiesConfiguration {
     private Map<String, String> prod ;//= new HashMap<>();
     private List<String> servers = new ArrayList<>();
 
+    @NotNull
+    private List<MyBean> myBeans;
+
     public void setProd(HashMap<String, String> prod) {
         this.prod = prod;
     }
 
     public void setServers(List<String> servers) {
         this.servers = servers;
+    }
+
+    public void setMyBeans(List<MyBean> myBeans) {
+        this.myBeans = myBeans;
     }
 
     @PostConstruct
@@ -66,5 +78,6 @@ public class PropertiesConfiguration {
         System.out.println(">>>>>>" + inRange);
         System.out.println(">>>>>>" + prod);
         System.out.println(">>>>>>" + servers);
+        System.out.println(">>>>>>" + myBeans);
     }
 }

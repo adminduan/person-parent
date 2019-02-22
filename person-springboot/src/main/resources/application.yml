@@ -9,3 +9,7 @@ spring:
   application:
     admin:
       enabled: true
+logging:
+  file:
+    path: e:\\logs
+    max-size: 10KB

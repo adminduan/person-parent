@@ -17,5 +17,8 @@ environments:
   servers:
     - http://www.baidu.com
     - http://www.google.com
-
-
+  myBeans:
+    - name: zhsnagsan
+      desc: shangsan-desc
+    - name: lisi
+      desc: lisi-desc
