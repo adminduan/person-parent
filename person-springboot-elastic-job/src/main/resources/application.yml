@@ -1,0 +1,6 @@
+simpleJob:
+  cron: 0/5 * * * * ?
+  shardingTotalCount: 4
+  shardingItemParameters: 0=Beijing,1=Shanghai,2=Guangzhou,3=shenzhen
+server:
+  port: ${random.int[10000,19999]}
